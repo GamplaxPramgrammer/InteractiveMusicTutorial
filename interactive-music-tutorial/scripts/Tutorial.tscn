@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://tai6wl72mh0v"]
+
+[ext_resource type="Script" path="res://scripts/coob.gd" id="1_8a6sk"]
+[ext_resource type="Texture2D" uid="uid://bumhnkeo05b6p" path="res://icon.svg" id="2_8babj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4ik0"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnree"]
+size = Vector2(128.385, 128)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g3q57"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i8tge"]
+normal = Vector2(-1, 0)
+
+[node name="MainStage" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Coob" type="CharacterBody2D" parent="."]
+position = Vector2(536, 128)
+script = ExtResource("1_8a6sk")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Coob"]
+texture = ExtResource("2_8babj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coob"]
+shape = SubResource("RectangleShape2D_d4ik0")
+
+[node name="DaPlatform" type="StaticBody2D" parent="."]
+position = Vector2(544, 576)
+scale = Vector2(9.97, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="DaPlatform"]
+texture = ExtResource("2_8babj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DaPlatform"]
+shape = SubResource("RectangleShape2D_wnree")
+
+[node name="BoundaryLeft" type="StaticBody2D" parent="."]
+position = Vector2(0, 344)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryLeft"]
+shape = SubResource("WorldBoundaryShape2D_g3q57")
+
+[node name="BoundaryRight" type="StaticBody2D" parent="."]
+position = Vector2(1152, 352)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryRight"]
+shape = SubResource("WorldBoundaryShape2D_i8tge")
