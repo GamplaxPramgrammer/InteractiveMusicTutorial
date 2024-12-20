@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://tai6wl72mh0v"]
 
-[ext_resource type="Script" path="res://scripts/coob.gd" id="1_8a6sk"]
-[ext_resource type="Texture2D" uid="uid://bumhnkeo05b6p" path="res://icon.svg" id="2_8babj"]
+[ext_resource type="Script" path="res://scripts/coob.gd" id="1_6iwhy"]
+[ext_resource type="Texture2D" uid="uid://bumhnkeo05b6p" path="res://icon.svg" id="2_5yihl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4ik0"]
 size = Vector2(128, 128)
@@ -22,11 +22,11 @@ position = Vector2(576, 324)
 
 [node name="Coob" type="CharacterBody2D" parent="."]
 position = Vector2(536, 128)
-script = ExtResource("1_8a6sk")
+script = ExtResource("1_6iwhy")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Coob"]
-texture = ExtResource("2_8babj")
+texture = ExtResource("2_5yihl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coob"]
 shape = SubResource("RectangleShape2D_d4ik0")
@@ -37,7 +37,7 @@ scale = Vector2(9.97, 1)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="DaPlatform"]
-texture = ExtResource("2_8babj")
+texture = ExtResource("2_5yihl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DaPlatform"]
 shape = SubResource("RectangleShape2D_wnree")
